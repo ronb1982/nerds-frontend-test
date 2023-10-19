@@ -7,10 +7,6 @@
     @apply bg-[#171717] text-base text-white;
   }
 
-  /* :root {
-    @apply bg-[#171717] text-white;
-  } */
-
   header .navbar, footer {
     @apply flex justify-center items-center text-white;
   }
@@ -21,6 +17,25 @@
 
   nav li a {
     @apply hover:!text-gray-300 tracking-wide !text-white text-lg;
+  }
+
+  /* Headings */
+  h1 {
+    @apply text-3xl tracking-wide;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  /* Forms */
+  input[type='text'],
+  textarea {
+    @apply bg-transparent border border-blue-500 rounded-sm text-white outline-none placeholder-gray-400;
   }
 }
 
