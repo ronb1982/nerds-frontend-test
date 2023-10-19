@@ -3,7 +3,30 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    @apply bg-[#171717] text-white;
+  html, body {
+    @apply bg-[#171717] text-base text-white;
   }
+
+  /* :root {
+    @apply bg-[#171717] text-white;
+  } */
+
+  header .navbar, footer {
+    @apply flex justify-center items-center text-white;
+  }
+
+  header {
+    @apply text-white;
+  }
+
+  nav li a {
+    @apply hover:!text-gray-300 tracking-wide !text-white text-lg;
+  }
+}
+
+@layer components {
+
+}
+
+@layer utilities {
 }

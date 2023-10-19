@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={sourceSansPro.className}>
         <Header />
-        <main className='container py-6 mx-auto'>
+        <main className='container mx-auto px-4 py-6'>
           {children}
         </main>
       </body>
