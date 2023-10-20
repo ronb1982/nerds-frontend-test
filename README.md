@@ -40,12 +40,14 @@ This will install all packages and dependencies.
 Here's a list of all custom components and folders created specifically for this project:
 
 ### Folders
-- app/
--- components/*: Contains all of the Next.js custom components used in the view
-- utils/
--- constants.js: contains constants we may use globally
--- movies.js: my own custom movies JSON (I created my own JSON because I didn't see the JSON file in the email)
--- routes.js: incomplete file that would contain a list to all page routes in a real-world application
--- selectOptions.js: a list of select options (dropdown menu items)
-- public/
--- img/*: contains all images
+#### app/
+- app/components/*: Contains all of the Next.js custom components used in the view
+
+#### utils/
+- utils/constants.js: contains constants we may use globally
+- utils/movies.js: my own custom movies JSON (I created my own JSON because I didn't see the JSON file in the email)
+- utils/routes.js: incomplete file that would contain a list to all page routes in a real-world application
+- utils/selectOptions.js: a list of select options (dropdown menu items)
+
+#### public/
+- public/img/*: contains all images
