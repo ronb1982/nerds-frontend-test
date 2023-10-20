@@ -48,7 +48,13 @@
 }
 
 @layer components {
+  .section-search-filter {
+    @apply md:flex md:justify-between;
+  }
 
+  .section-movies {
+    @apply my-10;
+  }
 }
 
 @layer utilities {

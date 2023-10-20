@@ -17,7 +17,7 @@ const CustomSelectInput = (props) => {
   }, [props.options]);
 
   return (
-    <>
+    <div className='mr-2'>
       <div className="mb-2">
         <Label
           htmlFor={props.elementId}
@@ -37,7 +37,7 @@ const CustomSelectInput = (props) => {
           )
         ))}
       </Select>
-    </>
+    </div>
   )
 }
 
