@@ -18,28 +18,13 @@ export const sortByRatingOptions = [
         defaultValue: true,
     },
     {
-        label: '5 stars',
-        value: '5',
+        label: 'Lowest to Highest',
+        value: 'lowest-highest',
         defaultValue: false,
     },
     {
-        label: '4 stars',
-        value: '4',
-        defaultValue: false,
-    },
-    {
-        label: '3 stars',
-        value: '3',
-        defaultValue: false,
-    },
-    {
-        label: '2 stars',
-        value: '2',
-        defaultValue: false,
-    },
-    {
-        label: '1 star',
-        value: '1',
+        label: 'Highest to lowest',
+        value: 'highest-lowest',
         defaultValue: false,
     },
 ]

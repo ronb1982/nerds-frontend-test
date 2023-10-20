@@ -14,20 +14,33 @@ const HomePage = () => {
 
   useEffect(() => {
     // sort films in ascending order by default
-    if (sortedMovies?.length === 0) {
-      setSortedMovies(movies.sort((a, b) => a.title.localeCompare(b.title)));
-    }
-  }, [sortedMovies]);
+    setSortedMovies(movies.sort((a, b) => a.title.localeCompare(b.title)));
+  }, []);
 
+  /*
+  * EVENT HANDLERS
+  */
   const onSortByTitleChange = (event) => {
     const selectedValue = event.target.value;
     
     if (selectedValue === 'a-z') {
       // sort by title in ascending order
-      setSortedMovies([...movies.sort((a, b) => a.title.localeCompare(b.title))]);
+      setSortedMovies([...sortedMovies.sort((a, b) => a.title.localeCompare(b.title))]);
     } else { // 'z-a'
       // sort by title in descending order
-      setSortedMovies([...movies.sort((a, b) => b.title.localeCompare(a.title))]);
+      setSortedMovies([...sortedMovies.sort((a, b) => b.title.localeCompare(a.title))]);
+    }
+  }
+
+  const onSortByRatingChange = (event) => {
+    const selectedValue = event.target.value;
+    
+    if (selectedValue === 'lowest-highest') {
+      // sort from lowest to highest rating
+      setSortedMovies([...sortedMovies.sort((a, b) => a.rating - b.rating)]);
+    } else {
+      // sort from highest to lowest rating
+      setSortedMovies([...sortedMovies.sort((a, b) => b.rating - a.rating)]);
     }
   }
 
@@ -48,7 +61,7 @@ const HomePage = () => {
           <p className='text-sm text-gray-300 mb-2'>Sort by</p>
           <div className="flex">
             <CustomSelectInput options={sortByTitleOptions} onChange={onSortByTitleChange} />
-            <CustomSelectInput options={sortByRatingOptions} />
+            <CustomSelectInput options={sortByRatingOptions} onChange={onSortByRatingChange} />
           </div>
         </div>
       </section>
