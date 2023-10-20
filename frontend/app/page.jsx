@@ -15,6 +15,18 @@ const MoviesPage = () => {
   /*
   * EVENT HANDLERS
   */
+  const onSearch = (event) => {
+    event.preventDefault();
+    const searchTerm = event.target.value;
+
+    if (searchTerm) {
+      const results = sortedMovies.filter(movie => movie.title.toLowerCase().includes(searchTerm.toLowerCase()));
+      setSortedMovies([...results]);
+    } else {
+      setSortedMovies(movies);
+    }
+  }
+
   const onSortByTitleChange = (event) => {
     const selectedValue = event.target.value;
     
@@ -45,11 +57,16 @@ const MoviesPage = () => {
       <section className='section-search-filter'>
         <form className='search-form md:w-1/3 sm:w-full'>
           <div className='form-input mb-4'>
-            <CustomTextInput
-              rightIcon={FaSearch}
-              placeholder='Search for a title'
-            />
-          </div>
+            {sortedMovies ? (
+              <CustomTextInput
+                rightIcon={FaSearch}
+                placeholder='Search for a title'
+                onChange={onSearch}
+              />
+            ) : (
+              <h2>No titles found</h2>
+            )}
+            </div>
         </form>
 
         <div className='filters'>

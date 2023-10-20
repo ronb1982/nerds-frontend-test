@@ -17,6 +17,7 @@ const CustomTextInput = (props) => {
           type="text"
           placeholder={props.placeholder}
           rightIcon={props.rightIcon}
+          onKeyUp={props.onChange}
         />
     </div>
   )
