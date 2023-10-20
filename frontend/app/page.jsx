@@ -1,9 +1,10 @@
 'use client';
 
+import { ratingOptions, sortByOptions } from '@/utils/selectOptions';
+
 import CustomSelectInput from './components/forms/CustomSelectInput';
 import CustomTextInput from './components/forms/CustomTextInput';
 import { FaSearch } from 'react-icons/fa';
-import { sortByOptions } from '@/utils/selectOptions';
 
 const HomePage = () => {
   return (
@@ -20,12 +21,11 @@ const HomePage = () => {
         </form>
 
         <div className='filters'>
-          <p className='text-sm text-gray-300'>Sort by</p>
-          <CustomSelectInput
-            options={sortByOptions}
-          />
-
-          
+          <p className='text-sm text-gray-300 mb-2'>Sort by</p>
+          <div className="flex space-x-3">
+            <CustomSelectInput options={sortByOptions} />
+            <CustomSelectInput options={ratingOptions} />
+          </div>
         </div>
       </section>
     </>

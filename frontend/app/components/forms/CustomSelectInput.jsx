@@ -13,9 +13,8 @@ const CustomSelectInput = (props) => {
     if (defaultOption) {
       setDefaultValue(defaultOption.value);
       setDefaultLabel(defaultOption.label);
-
     }
-  }, []);
+  }, [props.options]);
 
   return (
     <>
@@ -32,18 +31,11 @@ const CustomSelectInput = (props) => {
         defaultValue={defaultValue}
       >
         <option value={defaultValue}>{defaultLabel}</option>
-        <option>
-          United States
-        </option>
-        <option>
-          Canada
-        </option>
-        <option>
-          France
-        </option>
-        <option>
-          Germany
-        </option>
+        {props.options.map(option => (
+          !option.defaultValue && (
+            <option value={option.value}>{option.label}</option>
+          )
+        ))}
       </Select>
     </>
   )
