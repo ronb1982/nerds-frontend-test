@@ -6,6 +6,7 @@ Author: Ron Buchanan
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
+- [Features](#features)
 
 ## Introduction
 
@@ -51,3 +52,8 @@ Here's a list of all custom components and folders created specifically for this
 
 #### public/
 - public/img/*: contains all images
+
+## Features
+- Search movies by title
+- Sort movies by title
+- Sort movies by rating
