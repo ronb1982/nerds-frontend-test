@@ -6,6 +6,7 @@ import CustomSelectInput from './components/forms/CustomSelectInput';
 import CustomTextInput from './components/forms/CustomTextInput';
 import { FaSearch } from 'react-icons/fa';
 import Grid from './components/Grid';
+import { movies } from '@/utils/movies';
 
 const HomePage = () => {
   return (
@@ -30,7 +31,7 @@ const HomePage = () => {
         </div>
       </section>
       <section className='section-movies'>
-      <Grid />
+      <Grid items={movies} />
       </section>
     </>
   )

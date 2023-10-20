@@ -31,9 +31,9 @@ const CustomSelectInput = (props) => {
         defaultValue={defaultValue}
       >
         <option value={defaultValue}>{defaultLabel}</option>
-        {props.options.map(option => (
+        {props.options.map((option, index) => (
           !option.defaultValue && (
-            <option value={option.value}>{option.label}</option>
+            <option key={index} value={option.value}>{option.label}</option>
           )
         ))}
       </Select>
