@@ -9,13 +9,8 @@ import { FaSearch } from 'react-icons/fa';
 import Grid from './components/Grid';
 import { movies } from '@/utils/movies';
 
-const HomePage = () => {
-  const [sortedMovies, setSortedMovies] = useState([]);
-
-  useEffect(() => {
-    // sort films in ascending order by default
-    setSortedMovies(movies.sort((a, b) => a.title.localeCompare(b.title)));
-  }, []);
+const MoviesPage = () => {
+  const [sortedMovies, setSortedMovies] = useState(movies);
 
   /*
   * EVENT HANDLERS
@@ -74,4 +69,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default MoviesPage;

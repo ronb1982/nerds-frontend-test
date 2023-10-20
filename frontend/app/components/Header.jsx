@@ -20,7 +20,7 @@ const Header = () => {
             <Navbar.Collapse className='order-1'>
                 <Navbar.Link href="#">Homepage</Navbar.Link>
                 <Navbar.Link href="#">Series</Navbar.Link>
-                <Navbar.Link href="#">Movies</Navbar.Link>
+                <Navbar.Link href={routes.home.pathname} className='active'>Movies</Navbar.Link>
             </Navbar.Collapse>
             <div className='flex order-3'>
                 <img

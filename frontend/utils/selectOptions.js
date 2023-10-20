@@ -1,8 +1,13 @@
 export const sortByTitleOptions = [
     {
+        label: 'Title',
+        value: 'title',
+        defaultValue: true,
+    },
+    {
         label: 'Title (A-Z)',
         value: 'a-z',
-        defaultValue: true,
+        defaultValue: false,
     },
     {
         label: 'Title (Z-A)',
