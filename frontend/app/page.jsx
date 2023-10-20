@@ -1,6 +1,7 @@
 'use client';
 
-import { ratingOptions, sortByOptions } from '@/utils/selectOptions';
+import { sortByRatingOptions, sortByTitleOptions } from '@/utils/selectOptions';
+import { useEffect, useState } from 'react';
 
 import CustomSelectInput from './components/forms/CustomSelectInput';
 import CustomTextInput from './components/forms/CustomTextInput';
@@ -9,6 +10,27 @@ import Grid from './components/Grid';
 import { movies } from '@/utils/movies';
 
 const HomePage = () => {
+  const [sortedMovies, setSortedMovies] = useState([]);
+
+  useEffect(() => {
+    // sort films in ascending order by default
+    if (sortedMovies?.length === 0) {
+      setSortedMovies(movies.sort((a, b) => a.title.localeCompare(b.title)));
+    }
+  }, [sortedMovies]);
+
+  const onSortByTitleChange = (event) => {
+    const selectedValue = event.target.value;
+    
+    if (selectedValue === 'a-z') {
+      // sort by title in ascending order
+      setSortedMovies([...movies.sort((a, b) => a.title.localeCompare(b.title))]);
+    } else { // 'z-a'
+      // sort by title in descending order
+      setSortedMovies([...movies.sort((a, b) => b.title.localeCompare(a.title))]);
+    }
+  }
+
   return (
     <>
       <h1>Movies</h1>
@@ -25,13 +47,15 @@ const HomePage = () => {
         <div className='filters'>
           <p className='text-sm text-gray-300 mb-2'>Sort by</p>
           <div className="flex">
-            <CustomSelectInput options={sortByOptions} />
-            <CustomSelectInput options={ratingOptions} />
+            <CustomSelectInput options={sortByTitleOptions} onChange={onSortByTitleChange} />
+            <CustomSelectInput options={sortByRatingOptions} />
           </div>
         </div>
       </section>
       <section className='section-movies'>
-      <Grid items={movies} />
+        {sortedMovies && (
+          <Grid items={sortedMovies} />
+        )}
       </section>
     </>
   )

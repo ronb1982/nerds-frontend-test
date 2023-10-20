@@ -1,4 +1,4 @@
-export const sortByOptions = [
+export const sortByTitleOptions = [
     {
         label: 'Title (A-Z)',
         value: 'a-z',
@@ -11,7 +11,7 @@ export const sortByOptions = [
     },
 ]
 
-export const ratingOptions = [
+export const sortByRatingOptions = [
     {
         label: 'Rating',
         value: 'rating',

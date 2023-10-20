@@ -29,6 +29,7 @@ const CustomSelectInput = (props) => {
         id={props.elementId}
         required={props.required}
         defaultValue={defaultValue}
+        onChange={props.onChange}
       >
         <option value={defaultValue}>{defaultLabel}</option>
         {props.options.map((option, index) => (
